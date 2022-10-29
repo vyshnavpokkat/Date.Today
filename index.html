@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div id="container">
+        
+        <center>
+            <h1>Day Of Weak</h1>
+            <p>Today is:</p>
+            <button id="date" onclick="date()">Date</button>
+            <button id="D" onclick="day()">Day</button>
+            <button id="M" onclick="Mnt()">Month</button>
+            <button id="Y" onclick="Year()">Year</button><br>
+            <button id="T" onclick="Time()">Time</button>
+        </center>
+
+    </div>
+    <script>
+        var dat=new Date()
+        //console.log()
+        function date(){
+            document.getElementById("date").innerHTML=`${dat.getDay()}/${dat.getMonth()}/${dat.getFullYear()}`
+        }
+        function day(){
+            var d1=["SUN","MON","TUE","WED","THU","FRI","SAT"]
+            var day=dat.getDay()
+            //console.log(day)
+            document.getElementById("D").innerHTML=d1[day]
+        }
+        function Mnt(){
+            var M1=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+            var Month=dat.getMonth()
+            //console.log(Month)
+            document.getElementById("M").innerHTML=M1[Month]
+        }
+        function Year(){
+            var year=dat.getFullYear()
+            //console.log(year)
+            document.getElementById("Y").innerHTML=year
+        }
+        function Time(){
+            var timeH=dat.getHours()
+            console.log(timeH)
+            var timeM=dat.getMinutes()
+            var timeS=dat.getSeconds()
+            document.getElementById("T").innerHTML=`${timeH}Hr : ${timeM}Min : ${timeS}Sec`
+        }
+        
+        
+    </script>
+</body>
+</html>
